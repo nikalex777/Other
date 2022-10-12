@@ -45,7 +45,7 @@ public class Main {
         for (int i = 0; i < products.length; i++) {
             if (counts[i] != 0) {
 
-                System.out.println("\t" + products[i] + " " + (doBonus ? counts[i] + 1 : counts[i]) + " шт. за " + (prices[i] * counts[i]) + " руб.");
+                //System.out.println("\t" + products[i] + " " + (doBonus ? counts[i] + 1 : counts[i]) + " шт. за " + (prices[i] * counts[i]) + " руб.");
 
                 boolean isOnSale = false;
                 for (String saleProduct : productsOnSale) {
@@ -55,10 +55,10 @@ public class Main {
                 }
 
                 if (isOnSale) {
-                    System.out.println("\t" + products[i] + " " + counts[i] + " шт. за " + (prices[i] * (counts[i] / 3 * 2 + counts[i] % 3)) + " руб. (распродажа!)");
+                    System.out.println("\t" + products[i] + " " + (doBonus ? counts[i] + 1 : counts[i]) + " шт. за " + (prices[i] * (counts[i] / 3 * 2 + counts[i] % 3)) + " руб. (распродажа!)");
                     sum += prices[i] * (counts[i] / 3 * 2 + counts[i] % 3);
                 } else {
-                    System.out.println("\t" + products[i] + " " + counts[i] + " шт. за " + (prices[i] * counts[i]) + " руб.");
+                    System.out.println("\t" + products[i] + " " + (doBonus ? counts[i] + 1 : counts[i]) + " шт. за " + (prices[i] * counts[i]) + " руб.");
                     sum += prices[i] * counts[i];
                 }
 
